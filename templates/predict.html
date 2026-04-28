@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block body %}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <h1 class="display-3 mb-3 animated slideInDown">Predict Delivery Time</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
+                    <li class="breadcrumb-item text-dark active" aria-current="page">Predict Delivery Time</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Predict Start -->
+<div class="container-xxl py-6">
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="section-header text-center mx-auto mb-5" style="max-width: 600px;">
+            <h1 class="display-5 mb-3">Predict Delivery Time</h1>
+            <p>Enter delivery details to estimate time</p>
+        </div>
+
+        <!-- Form Center -->
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+
+                <form action="/predict" method="POST">
+                    <div class="row g-3">
+
+                        <!-- Distance -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="number" step="any" class="form-control" name="Distance" placeholder="Distance" required>
+                                <label>Distance (km)</label>
+                            </div>
+                        </div>
+
+                        <!-- Traffic -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <select class="form-control" name="Traffic_Level" required>
+                                    <option value="">Select Traffic</option>
+                                    <option>Low</option>
+                                    <option>Medium</option>
+                                    <option>High</option>
+                                </select>
+                                <label>Traffic Level</label>
+                            </div>
+                        </div>
+
+                        <!-- Preparation Time -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="number" class="form-control" name="Preparation_Time_min" placeholder="Prep Time" required>
+                                <label>Preparation Time (min)</label>
+                            </div>
+                        </div>
+
+                        <!-- Courier Experience -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <input type="number" step="any" class="form-control" name="Courier_Experience_yrs" placeholder="Experience" required>
+                                <label>Courier Experience (years)</label>
+                            </div>
+                        </div>
+
+                        <!-- Weather -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <select class="form-control" name="Weather" required>
+                                    <option value="">Select Weather</option>
+                                    <option value="Clear">Clear</option>
+                                    <option value="Foggy">Foggy</option>
+                                    <option value="Rainy">Rainy</option>
+                                    <option value="Snowy">Snowy</option>
+                                    <option value="Windy">Windy</option>
+                                </select>
+                                <label>Weather</label>
+                            </div>
+                        </div>
+
+                        <!-- Time of Day -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <select class="form-control" name="Time_of_Day" required>
+                                    <option value="">Select Time</option>
+                                    <option value="Morning">Morning</option>
+                                    <option value="Afternoon">Afternoon</option>
+                                    <option value="Evening">Evening</option>
+                                    <option value="Night">Night</option>
+                                </select>
+                                <label>Time of Day</label>
+                            </div>
+                        </div>
+
+                        <!-- Vehicle -->
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <select class="form-control" name="Vehicle_Type" required>
+                                    <option value="">Select Vehicle</option>
+                                    <option value="Bike">Bike</option>
+                                    <option value="Car">Car</option>
+                                    <option value="Scooter">Scooter</option>
+                                </select>
+                                <label>Vehicle Type</label>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="col-12 text-center">
+                            <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">
+                                Predict
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+                {% if prediction_text %}
+                    <div class="mt-5 p-4 bg-light border rounded-3 border-start border-primary wow fadeInup"
+                        data-wow-delay="0.1s">
+                        <h4 class="text-primary">Prediction Result:</h4>
+                        <p class=" display-6 mb-0 ">{{ prediction_text }}</p>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6 text-center">
+
+                {% if prediction %}
+                <div class="alert alert-success">
+                    <h4>Estimated Delivery Time:</h4>
+                    <h2>{{ prediction }} minutes</h2>
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Predict End -->
+
+    {% endblock body %}

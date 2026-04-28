@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <h1 class="display-3 mb-3 animated slideInDown">About Us</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a class="text-body" href="#">Home</a></li>
+                
+                    <li class="breadcrumb-item text-dark active" aria-current="page">About Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- About Start -->
+        <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+
+                <!-- Image Section -->
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                   <div class="about-img position-relative overflow-hidden p-5 pe-0 text-center">
+                    <i class="fas fa-motorcycle fa-6x text-primary"></i>
+                   </div>
+                 </div>
+
+                <!-- Content Section -->
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="display-5 mb-4">
+                        Food Delivery Time Prediction System
+                    </h1>
+
+                    <p class="mb-4">
+                        This project focuses on predicting food delivery time using 
+                        machine learning techniques. The system analyzes various factors 
+                        such as distance, traffic conditions, and order details to 
+                        provide accurate delivery time estimates.
+                    </p>
+
+                    <p>
+                        <i class="fa fa-check text-primary me-3"></i>
+                        Uses machine learning algorithms for accurate prediction
+                    </p>
+
+                    <p>
+                        <i class="fa fa-check text-primary me-3"></i>
+                        Considers real-time factors like distance and traffic
+                    </p>
+
+                    <p>
+                        <i class="fa fa-check text-primary me-3"></i>
+                        Integrated with a web application using Flask
+                    </p>
+
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="/predict">
+                        Explore Prediction
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+    <!-- About End -->
+
+
+    <!-- Firm Visit Start -->
+    <!-- About CTA Start -->
+<div class="container-fluid bg-primary bg-icon mt-5 py-6">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+
+            <!-- Text Content -->
+            <div class="col-md-7 wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-5 text-white mb-3">
+                    Experience Smart Delivery Time Prediction
+                </h1>
+                <p class="text-white mb-0">
+                    Our system leverages machine learning algorithms to predict food 
+                    delivery time with high accuracy. By analyzing factors like distance, 
+                    traffic conditions, and order details, users can get real-time 
+                    predictions and make better decisions while ordering food.
+                </p>
+            </div>
+
+            <!-- Button -->
+            <div class="col-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
+                <a class="btn btn-lg btn-secondary rounded-pill py-3 px-5" href="/predict">
+                    Try Prediction Now
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- About CTA End -->
+    <!-- Firm Visit End -->
+
+
+        <!-- Feature Start -->
+        <!-- Features Start -->
+    <div class="container-fluid bg-light bg-icon py-6">
+        <div class="container">
+
+            <!-- Heading -->
+            <div class="section-header text-center mx-auto mb-5 wow fadeInUp" 
+                data-wow-delay="0.1s" style="max-width: 500px;">
+                <h1 class="display-5 mb-3">System Features</h1>
+                <p>
+                    Our Food Delivery Time Prediction system integrates machine learning 
+                    and real-time data to provide accurate and efficient delivery estimates.
+                </p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Feature 1 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5 shadow rounded">
+                        <img class="img-fluid mb-4" src="/static/img/prediction.png" alt="">
+                        <h4 class="mb-3">Accurate Prediction</h4>
+                        <p class="mb-4">
+                            Uses machine learning algorithms to predict delivery time 
+                            with high accuracy based on multiple input parameters.
+                        </p>
+                        
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5 shadow rounded">
+                        <img class="img-fluid mb-4" src="/static/img/traffic-analysis.png" alt="">
+                        <h4 class="mb-3">Real-Time Analysis</h4>
+                        <p class="mb-4">
+                            Considers dynamic factors such as traffic conditions and 
+                            delivery routes to improve prediction reliability.
+                        </p>
+                        
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-white text-center h-100 p-4 p-xl-5 shadow rounded">
+                        <img class="img-fluid mb-4" src="/static/img/web-app.png" alt="">
+                        <h4 class="mb-3">Web Integration</h4>
+                        <p class="mb-4">
+                            Integrated with a user-friendly web interface using Flask 
+                            for real-time input and instant prediction output.
+                        </p>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+<!-- Features End -->
+    <!-- Feature End -->
+
+
+    {% endblock body %}

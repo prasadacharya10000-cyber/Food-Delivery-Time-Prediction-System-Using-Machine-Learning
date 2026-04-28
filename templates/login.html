@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <h1 class="display-3 mb-3 animated slideInDown">Login</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a class="text-body" href="/">Home</a></li>
+                    <li class="breadcrumb-item text-dark active" aria-current="page">Login</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+        <!-- Login Start -->
+    <div class="container-xxl py-6">
+        <div class="container">
+
+            <!-- Heading -->
+            <div class="section-header text-center mx-auto mb-5" style="max-width: 500px;">
+                <h1 class="display-5 mb-3">Login</h1>
+                <p>Login to predict food delivery time!</p>
+            </div>
+
+            <!-- Centered Form -->
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-8">
+                        <!-- Flash Messages -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }} text-center">
+                                {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+
+                    <form action="/login" method="POST">
+                        <div class="row g-3">
+
+                            <!-- Email -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="Email" name="email" required>
+                                    <label for="loginEmail">Email</label>
+                                </div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Password" name="password" required>
+                                    <label for="loginPassword">Password</label>
+                                </div>
+                            </div>
+
+                            <!-- Login Button -->
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">
+                                    Login
+                                </button>
+                            </div>
+
+                            <!-- Register Link -->
+                            <div class="col-12 text-center mt-3">
+                                <p>Don't have an account? 
+                                    <a href="/register">Register</a>
+                                </p>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Login End -->
+
+    {% endblock body %}
