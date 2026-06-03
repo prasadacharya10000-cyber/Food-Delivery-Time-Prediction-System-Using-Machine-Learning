@@ -19,7 +19,7 @@ def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
         user="root",    
-        password="",
+        password="1234",
         database="food_db",
         #port=3306 --default port for MySQL, can be omitted if using default
     )
